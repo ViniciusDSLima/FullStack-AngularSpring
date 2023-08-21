@@ -1,17 +1,17 @@
 package com.example.angular_spring.Domain.models;
 
+import com.example.angular_spring.DTO.TecnicoDTO;
 import com.example.angular_spring.Domain.enums.Perfil;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 @Entity(name = "tecnico")
 @Data
 @AllArgsConstructor
-public class Tecnico extends Pessoa{
+public class Cliente extends Pessoa{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,5 +24,12 @@ public class Tecnico extends Pessoa{
     public Tecnico(){
         super();
         addPerfis(Perfil.TECNICO);
+    }
+
+    public Tecnico(TecnicoDTO tecnicoDTO) {
+        this.nome = tecnicoDTO.getNome();
+        this.email = tecnicoDTO.getEmail();
+        this.senha = tecnicoDTO.getSenha();
+        this.cpf = tecnicoDTO.getCpf();
     }
 }
