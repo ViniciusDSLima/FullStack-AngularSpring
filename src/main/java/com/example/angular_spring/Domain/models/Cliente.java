@@ -1,5 +1,6 @@
 package com.example.angular_spring.Domain.models;
 
+import com.example.angular_spring.DTO.ClienteDTO;
 import com.example.angular_spring.Domain.enums.Perfil;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,5 +32,14 @@ public class Cliente extends Pessoa{
     public Cliente() {
         super();
         addPerfis(Perfil.CLIENTE);
+    }
+
+    public Cliente(ClienteDTO clienteDTO) {
+        this.nome = clienteDTO.getNome();
+        this.email = clienteDTO.getEmail();
+        this.senha = clienteDTO.getSenha();
+        this.cpf = clienteDTO.getCpf();
+        this.perfis = clienteDTO.getPerfis();
+        this.criacao = clienteDTO.getCriacao();
     }
 }

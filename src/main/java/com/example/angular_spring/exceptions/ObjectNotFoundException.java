@@ -1,4 +1,12 @@
 package com.example.angular_spring.exceptions;
 
-public class ObjectnofFoundException extends RuntimeException{
+public class ObjectNotFoundException extends RuntimeException{
+
+    public ObjectNotFoundException(String message, Throwable causa){
+        super(message, causa);
+    }
+
+    public ObjectNotFoundException(String message) {
+        super(message);
+    }
 }

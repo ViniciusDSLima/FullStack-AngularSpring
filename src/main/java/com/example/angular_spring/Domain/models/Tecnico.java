@@ -11,7 +11,7 @@ import java.util.List;
 @Entity(name = "tecnico")
 @Data
 @AllArgsConstructor
-public class Cliente extends Pessoa{
+public class Tecnico extends Pessoa{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

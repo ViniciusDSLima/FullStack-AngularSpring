@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class StantarErro {
+public class StandardError {
 
     private Long timestamp;
     private Integer status;
